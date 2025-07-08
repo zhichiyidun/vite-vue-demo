@@ -15,3 +15,4 @@ app.mount('#app')
 
 // const obj = { name: 'dawei', age: 20 }
 // const arr = [1, 2, 3]
+// feat: add a new feature
