@@ -1,10 +1,26 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import { getTopicsInfo } from './api/user'
+
+const url = import.meta.env.VITE_API_URL
+
+onMounted(() => {
+  // fetch('/api/topics').then((res) => {
+  //   res.json().then((data) => {
+  //     console.log(data)
+  //   })
+  // })
+  getTopicsInfo().then((data) => {
+    console.log(data.data)
+  })
+})
 </script>
 
 <template>
   <header>
+    <h1>{{ url }}</h1>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
